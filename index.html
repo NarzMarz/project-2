@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rock, paper, scissors, lizard, spock</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Rock Paper Scissors Lizard Spock Game</title>
 </head>
 <body>
-    
+    <div id="menu">
+        <button onclick="startGame()">Start Game</button>
+        <button onclick="showRules()">Rules</button>
+        <button onclick="showSettings()">Settings</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+        <div id="player-side">
+            <h3>Your Turn</h3>
+            <div class="turn-options">
+                <img src="rock.png" alt="Rock" onclick="play('rock')">
+                <img src="paper.png" alt="Paper" onclick="play('paper')">
+                <img src="scissors.png" alt="Scissors" onclick="play('scissors')">
+                <img src="lizard.png" alt="Lizard" onclick="play('lizard')">
+                <img src="spock.png" alt="Spock" onclick="play('spock')">
+            </div>
+            <p>Your Score: <span id="player-score">0</span></p>
+        </div>
+
+        <div id="computer-side">
+            <h3>Sheldon's Turn</h3>
+            <img src="sheldon.png" alt="Sheldon">
+            <p>Sheldon's Score: <span id="computer-score">0</span></p>
+        </div>
+    </div>
+
+    <div id="result-popup" class="hidden">
+        <p id="result-message"></p>
+        <button onclick="showMenu()">Menu</button>
+        <button onclick="playAgain()">Play Again</button>
+    </div>
+
+    <script src="game.js"></script>
 </body>
 </html>
